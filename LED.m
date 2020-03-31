@@ -5,6 +5,7 @@ close all
 a = arduino();
 if ~exist('a','var')
     clear a
+    a = arduino();
 end
 disp('PORT INIT');
 
