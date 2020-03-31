@@ -9,7 +9,7 @@ if ~exist('a','var')
 end
 disp('PORT INIT');
 
-disp('LED #1');
+disp('LED #1: blinking');
 blinking = 0;
 for i = 1:4
     blinking = not(blinking);
@@ -18,7 +18,7 @@ for i = 1:4
     disp(blinking);
 end
 
-disp('LED #2');
+disp('LED #2: brightening/dimming');
 max_brightness = 5;
 max_time = 10;
 brightness_step = (max_brightness-0)/max_time;
@@ -32,7 +32,7 @@ for i = 1:max_time
     pause(0.1);
 end
 
-disp('LED #3');
+disp('LED #3: control by variable resistor');
 time = 100;
 while time > 0
     voltage = readVoltage(a, 'A0');
@@ -42,7 +42,7 @@ while time > 0
     pause(0.1);
 end
 
-disp('LED #4');
+disp('LED #4: control by pull up button');
 configurePin(a, 'D12', 'pullup');
 time = 100;
 while time > 0
